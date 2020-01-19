@@ -1,6 +1,8 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { fetchResults } from '../helpers/helper'
+import Header from './Header'
 import Characters from './Characters'
+import Footer from './Footer'
 
 const baseUrl = 'https://swapi.co/api/people'
 
@@ -36,14 +38,18 @@ class App extends Component {
 	render() {
 		const { people, currentPage, total } = this.state
 		return (
-			<main role="main">
-				<Characters
-					people={people}
-					current={currentPage}
-					total={total}
-					onPageChange={this.onPageChange}
-				/>
-			</main>
+			<Fragment>
+				<Header />
+				<main role="main" className="container">
+					<Characters
+						people={people}
+						current={currentPage}
+						total={total}
+						onPageChange={this.onPageChange}
+					/>
+				</main>
+				<Footer />
+			</Fragment>
 		)
 	}
 }
