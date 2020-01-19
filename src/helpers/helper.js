@@ -1,8 +1,8 @@
 import axios from 'axios'
 
-export const fetchResults = async (searchTerm, page) => {
+export const fetchResults = async url => {
 	let options = {
-		url: `https://swapi.co/api/people/`,
+		url,
 		method: 'get'
 	}
 
