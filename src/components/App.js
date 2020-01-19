@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { fetchResults } from '../helpers/helper'
+import Characters from './Characters'
 
 class App extends Component {
 	constructor(props) {
@@ -22,6 +23,7 @@ class App extends Component {
 		return (
 			<div className="App">
 				<h1>Hello</h1>
+				<Characters people={this.state.people} />
 				<span>{this.state.people.length}</span>
 			</div>
 		)
