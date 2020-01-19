@@ -3,7 +3,7 @@ import { List, Avatar } from 'antd'
 
 const Characters = ({ people }) => {
 	return (
-		<div>
+		<div className="container">
 			<h1>Result</h1>
 			<List
 				dataSource={people}
