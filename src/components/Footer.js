@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Footer = () => (
-	<footer className="footer pt-2">
+	<footer className="footer pt-2 mt-auto">
 		<div className="container-fluid text-center">
 			<span className="text-white"> &reg; All rights reserved.</span>
 		</div>

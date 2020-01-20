@@ -45,7 +45,7 @@ class App extends Component {
 		return (
 			<Fragment>
 				<Header />
-				<main role="main" className="container">
+				<main role="main" className="flex-shrink-0">
 					<Loadable loading={loading}>
 						<Characters
 							people={people}

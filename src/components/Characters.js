@@ -1,5 +1,5 @@
 import React from 'react'
-import { List, Avatar } from 'antd'
+import { List } from 'antd'
 import Info from './Info'
 
 const Characters = ({ people, current, total, onPageChange }) => {
@@ -13,7 +13,7 @@ const Characters = ({ people, current, total, onPageChange }) => {
 	}
 
 	return (
-		<div className="container pb-5 mb-5">
+		<div className="container pb-5 mb-5 characters-container">
 			<h4>Characters [{total}]</h4>
 			<List
 				dataSource={people}
