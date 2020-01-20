@@ -11,6 +11,7 @@ const baseUrl = 'https://swapi.co/api/people'
 class App extends Component {
 	constructor(props) {
 		super(props)
+		//Initialize Application state
 		this.state = {
 			people: [],
 			currentPage: 1,
@@ -21,15 +22,20 @@ class App extends Component {
 	}
 
 	componentDidMount() {
+		//Fetch Character from SWAPI when application is mounted
 		this.fetchPeople()
 	}
 
+	//Method that Make request to Api
 	fetchPeople = async () => {
 		const { currentPage, searchTerm } = this.state
+		//Build Search String to build request Url
 		let searchString = searchTerm === '' ? '' : `&search=${searchTerm}`
+		//Build request Url
 		let url = `${baseUrl}?page=${currentPage}${searchString}`
 		let res = await fetchResults(url)
 		if (res !== null) {
+			//Store Api request response, in the application state
 			this.setState({
 				people: res.data.results,
 				total: res.data.count,
@@ -38,6 +44,7 @@ class App extends Component {
 		}
 	}
 
+	//Method that hanles pagination page change
 	onPageChange = (currentPage, sizePerPage) => {
 		this.setState(
 			{

@@ -2,7 +2,9 @@ import React from 'react'
 import { List } from 'antd'
 import Info from './Info'
 
+//Component that list all characters stored in the Application state
 const Characters = ({ people, current, total, onPageChange }) => {
+	//Build pagination object or parameters
 	let pagination = {
 		pageSize: 10,
 		simple: true,

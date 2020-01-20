@@ -1,7 +1,9 @@
 import React from 'react'
 import { Descriptions, Icon } from 'antd'
 
+//Component that display a Character information
 const Info = ({ character }) => {
+	//Lets determine what icon to use based on Character gender
 	let gender =
 		character.gender === 'male'
 			? 'man'

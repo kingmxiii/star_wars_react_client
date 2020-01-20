@@ -1,5 +1,6 @@
 import axios from 'axios'
 
+//Helper function that make get request to specified url
 export const fetchResults = async url => {
 	let options = {
 		url,
