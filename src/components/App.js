@@ -3,13 +3,14 @@ import { fetchResults } from '../helpers/helper'
 import Header from './Header'
 import Characters from './Characters'
 import Footer from './Footer'
+import Loadable from './Loadable'
 
 const baseUrl = 'https://swapi.co/api/people'
 
 class App extends Component {
 	constructor(props) {
 		super(props)
-		this.state = { people: [], currentPage: 1, total: 0 }
+		this.state = { people: [], currentPage: 1, total: 0, loading: true }
 	}
 
 	componentDidMount() {
@@ -21,7 +22,11 @@ class App extends Component {
 		let url = `${baseUrl}?page=${currentPage}`
 		let res = await fetchResults(url)
 		if (res !== null) {
-			this.setState({ people: res.data.results, total: res.data.count })
+			this.setState({
+				people: res.data.results,
+				total: res.data.count,
+				loading: false
+			})
 		}
 	}
 
@@ -36,17 +41,19 @@ class App extends Component {
 	}
 
 	render() {
-		const { people, currentPage, total } = this.state
+		const { people, currentPage, total, loading } = this.state
 		return (
 			<Fragment>
 				<Header />
 				<main role="main" className="container">
-					<Characters
-						people={people}
-						current={currentPage}
-						total={total}
-						onPageChange={this.onPageChange}
-					/>
+					<Loadable loading={loading}>
+						<Characters
+							people={people}
+							current={currentPage}
+							total={total}
+							onPageChange={this.onPageChange}
+						/>
+					</Loadable>
 				</main>
 				<Footer />
 			</Fragment>
