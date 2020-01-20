@@ -27,3 +27,84 @@ code {
     padding: 8px 24px;
     height: 750px;
 }
+
+
+@media only screen and (max-height: 1366px) and (max-width: 1024px){
+  .characters-container {
+      height: 1150px;
+  }
+}
+
+@media only screen and (max-height: 1024px) and (max-width: 1024px){
+  .characters-container {
+      height: 850px;
+  }
+}
+
+@media (max-height: 823px){
+  .characters-container {
+      height: 600px;
+  }
+}
+
+@media (max-height: 768px) and (max-width: 1024px){
+  .characters-container {
+      height: 600px;
+  }
+}
+
+@media (max-height: 736px) and (max-width: 1024px){
+  .characters-container {
+      height: 560px;
+  }
+}
+
+@media (max-height: 667px){
+  .characters-container {
+      height: 475px;
+  }
+}
+
+@media (max-height: 568px){
+  .characters-container {
+      height: 400px;
+  }
+}
+
+@media (max-height: 414px){
+  .characters-container {
+      height: 240px;
+  }
+
+  .mansory-brick {
+    min-width: 100px;
+  }
+}
+
+@media (max-height: 375px){
+  .characters-container {
+      height: 200px;
+  }
+}
+
+
+@media (max-height: 360px){
+  .characters-container {
+      height: 200px;
+  }
+
+  .mansory-brick {
+    min-width: 100px;
+  }
+}
+
+
+@media (max-height: 320px){
+  .characters-container {
+      height: 150px;
+  }
+
+  .mansory-brick {
+    min-width: 100px;
+  }
+}

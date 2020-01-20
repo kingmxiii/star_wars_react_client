@@ -82,7 +82,7 @@ class App extends Component {
 		return (
 			<Fragment>
 				<Header />
-				<main role="main" className="containter-fluid flex-shrink-0">
+				<main role="main" className="containter flex-shrink-0">
 					<SearchInput
 						value={searchTerm}
 						onSearch={this.onSearch}
